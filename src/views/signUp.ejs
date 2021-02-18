@@ -1,0 +1,76 @@
+<%- include('header') %>
+<style>
+    /*full-width input fields*/ 
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 2px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    /*style for button*/
+    button {
+        background-color: rgb(119, 115, 115);
+        color: white;
+        padding: 15px 20px;
+        margin: 8px 0;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    /*float signup buttons and add width*/
+    .signupbtn {
+        float: center;
+        width: 20%;
+    }
+
+    /*padding to container elements*/
+    .signup-container {
+        margin:100px;
+        padding: 16px;
+        border:1px solid #ccc"
+    }
+
+    /*clear floats*/
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    /*styles for signup button 
+      on extra small screens*/
+    @media screen and (max-width: 300px) {
+        .signupbtn {
+            width: 100%;
+        }
+    }
+</style>
+    <form action="/api/signUp">
+        <div class="signup-container">
+            <label><b>Name</b></label>
+            <input type="text" placeholder="Enter Name" name="name" required>
+
+            <label><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+ 
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+ 
+            <label><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="repeatPassword" required>
+
+            <div class="clearfix">
+                <button type="submit" class="signupbtn">Sign Up</button>
+            </div>
+            <% if(err){%>
+            <p style="color:red"><%= err %></p>
+            <% } else { %>
+                <p style="color:grey"><%= message %></p>
+            <% } %>
+        </div>
+    </form>
+    <%- include('footer')%>

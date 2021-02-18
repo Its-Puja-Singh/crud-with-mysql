@@ -1,0 +1,49 @@
+<%- include('header') %>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<h2>HTML Table</h2>
+
+<table>
+  <tr>
+    <th>Employee Code</th>
+    <th>Employee Name</th>
+    <th>Employee Email</th>
+    <th>Active</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  <% if(result.length>0){
+    result.forEach(function(row){
+  %>
+  <tr>
+    <td><%= row.EmployeeCode %></td>
+    <td><%= row.EmployeeName %></td>
+    <td><%= row.EmployeeEmail %></td>
+    <%if(row.IsActive==true){%>
+    <td>Yes</td>
+    <% } else {%>
+    <td>No</td>
+    <%}%>
+    <td><button>Update</button></td>
+    <td><button>Delete</button></td>
+  </tr>
+  <% }) } else { %>
+  <h1>No Employees are there</h1>
+  <%}%>
+</table>
+<%- include('footer')%>

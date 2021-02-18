@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Employee Application</title>
+<style>
+    .fixed-header{
+        width: 100%;
+        position: fixed;        
+        background: #333;
+        padding: 10px;
+        color: #fff;
+        left:0;
+        right:0;
+        top: 0;
+    } 
+    nav a{
+        color: #fff;
+        text-decoration: none;
+        padding: 7px 25px;
+        display: inline-block;
+    }
+    .login-alert{
+        color:red;
+        text-decoration: none;
+        padding: 7px 25px;
+        text-align: right;
+        display: inline-block;
+    }
+</style>
+</head>
+<body>
+    <div class="fixed-header">
+        <div class="container">
+            <nav>
+                <a href="/api/home">Home</a>
+                <a href="/api/signup">Signup</a>
+                <a href="/api/signin">Signin</a>
+                <a href="/api/employee">Employees</a>
+                <a style="float:right" href="/api/signout">Signout</a>
+                <%if(message){%>
+                    <p class="login-alert"><%= message %></p>
+                <%}%>
+            </nav>
+        </div>
+    </div>

@@ -1,0 +1,64 @@
+<%- include('header') %>
+<style>
+    /*add full-width input fields*/ 
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 2px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    /*style for button*/
+    button {
+        background-color: rgb(119, 115, 115);
+        color: white;
+        padding: 15px 20px;
+        margin: 8px 0;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    /*float signin buttons and add width*/
+    .signinbtn {
+        float: center;
+        width: 20%;
+    }
+
+    /*padding to container elements*/
+    .signin-container {
+        margin:100px;
+        padding: 16px;
+    }
+
+    /*clear floats*/
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    /*styles for cancel button and signup button 
+      on extra small screens*/
+    @media screen and (max-width: 300px) {
+        .signipbtn {
+            width: 100%;
+        }
+    }
+</style>
+    <form action="/api/signIn" >
+        <div class="signin-container">
+            <label><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+ 
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+
+            <div class="clearfix">
+                <button type="submit" class="signinbtn">Sign In</button>
+            </div>
+        </div>
+    </form>
+    <%- include('footer')%>
