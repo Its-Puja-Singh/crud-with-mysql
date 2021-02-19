@@ -20,12 +20,11 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-You can Create, Edit and Delete the Employee Details from
+You can Sign up first and Register yourself
 
 And then Sign in using the your credentials
 
-After that you can Sign up first and Register yourself
-
+After that you can Create, Edit and Delete the Employee Details.
 
 ### Puja Kumari
 
