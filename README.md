@@ -1,6 +1,6 @@
 # Getting Started with CRUD APP WITH SQL, NODE JS, AND EJS
 
-This project name [Crud-with-sql].
+The project name [Crud-with-sql].
 
 You will need to install
 
@@ -18,13 +18,13 @@ In the project directory, you can run:
 ### `npm run start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000/api/home](http://localhost:3000/api/home) to view it in the browser.
 
-You can Sign up first and Register yourself
+You can Sign up first and get Register yourself,
 
-And then Sign in using the your credentials
+And then Sign in using your credentials,
 
-After that you can Create, Edit and Delete the Employee Details.
+After that you will be able to Create, Edit, Update and Delete the Employee Details.
 
 ### Puja Kumari
 
