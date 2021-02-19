@@ -1,13 +1,23 @@
 const jwt = require('jsonwebtoken');
 
+//require localStorage
+if(typeof localStorage === 'undefined'|| localStorage == null) {
+    const LocalStorage = require('node-localstorage').LocalStorage;
+    localstorage = new LocalStorage('./scratch');
+}
+
+
 exports.requireSignin = (req, res,next) => {
-    if(req.headers.authorization){
-        const token = req.headers.authorization.split(" ")[1];
-        const user = jwt.verify(token, process.env.JWT_SECRET);
-        req.user = user;
-        next();
-    }
-    else{
-        res.render('header', {message:'Login required'});
+    try {
+        const token=localstorage.getItem('authorization');
+        if(token){
+            const user = jwt.verify(token, process.env.JWT_SECRET);
+            next();
+        }
+        else{
+             res.render('index', {alert:'Login required', loginUser:''});
+        }
+    } catch (e) {
+        next(e);
     }
 }

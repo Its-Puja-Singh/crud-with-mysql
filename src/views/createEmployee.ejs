@@ -49,22 +49,19 @@
         }
     }
 </style>
-    <form action="/api/signUp" method="post">
+    <form action="/api/createEmployee" method="post">
         <div class="signup-container">
-            <label><b>Name</b></label>
-            <input type="text" placeholder="Enter Name" name="name" required>
+            <label><b>Employee Code</b></label>
+            <input type="text" placeholder="Enter the code of employee" name="EmployeeCode" required>
 
-            <label><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+            <label><b>Employee Name</b></label>
+            <input type="text" placeholder="Enter the name of employee" name="EmployeeName" required>
  
-            <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
- 
-            <label><b>Repeat Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="repeatPassword" required>
+            <label><b>Employee Email</b></label>
+            <input type="text" placeholder="Enter the email id of employee" name="EmployeeEmail" required>
 
             <div class="clearfix">
-                <button type="submit" class="signupbtn">Sign Up</button>
+                <button type="submit" class="signupbtn"> Register Employee </button>
             </div>
             <% if(message){%>
             <h1 style="color:rgba(32, 32, 32, 0.849)"><%= message %></h1>

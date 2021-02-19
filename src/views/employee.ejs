@@ -15,6 +15,14 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+.update-delete{
+  color: rgb(39, 38, 38);
+  text-decoration: none;
+  border-style: inset;
+}
+.update-delete:visited{
+  text-decoration: none;
+}
 </style>
 <h2>HTML Table</h2>
 
@@ -39,8 +47,8 @@ tr:nth-child(even) {
     <% } else {%>
     <td>No</td>
     <%}%>
-    <td><button>Update</button></td>
-    <td><button>Delete</button></td>
+    <td><a class="update-delete" href="/api/updateEmployee?id=<%= row.id %>">Update</a></td>
+    <td><a class="update-delete" href="/api/deleteEmployee?id=<%= row.id %>">Delete</a></td>
   </tr>
   <% }) } else { %>
   <h1>No Employees are there</h1>

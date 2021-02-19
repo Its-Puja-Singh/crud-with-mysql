@@ -48,7 +48,7 @@
         }
     }
 </style>
-    <form action="/api/signIn" >
+    <form action="/api/signIn" method="post">
         <div class="signin-container">
             <label><b>Email</b></label>
             <input type="text" placeholder="Enter Email" name="email" required>
@@ -59,6 +59,9 @@
             <div class="clearfix">
                 <button type="submit" class="signinbtn">Sign In</button>
             </div>
+            <%if(message){%>
+                <p style="color:rgba(255, 0, 0, 0.582)"><%= message %></p>
+            <%}%>
         </div>
     </form>
     <%- include('footer')%>

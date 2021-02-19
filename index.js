@@ -5,25 +5,26 @@ const app = express();
 
 const path = require('path');
 
-// //bodyparser
-// var bodyParser = require('body-parser');
-// app.use(bodyParser.urlencoded({ extended:false }));
+//bodyparser
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended:false }));
 
 app.use(express.json())
+
+//require localStorage
+if(typeof localStorage === 'undefined'|| localStorage == null) {
+    const LocalStorage = require('node-localstorage').LocalStorage;
+    localstorage = new LocalStorage('./scratch');
+}
 
 //setting up template engine
 app.set('views', path.join(__dirname, 'src/views'));
 app.set('view engine', 'ejs');
 
-
+// rendering the home page
 app.get('/api/home', (req,res)=>{
-    res.render('index', {message:''});
-});
-app.get('/api/signup', (req,res)=>{
-    res.render('signUp', {message:''});
-});
-app.get('/api/signin', (req,res)=>{
-    res.render('signIn', {message:''});
+    const loginUser=localstorage.getItem('loginUser');
+    res.render('index', {alert:'', loginUser: loginUser});
 });
 
 //require routes
